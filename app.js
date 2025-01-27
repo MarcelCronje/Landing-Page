@@ -7,8 +7,6 @@ const app = express();
 const path = require("path");
 app.set("views", path.join(__dirname, "src", "views"));
 
-
-
 // Middleware
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -23,9 +21,9 @@ const mainRoutes = require("./src/controllers/MainController");
 app.use("/", mainRoutes);
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log("MongoDB connected"))
-    .catch((err) => console.error(err));
+mongoose.connect(process.env.MONGO_URI)
+.then(() => console.log("MongoDB connected"))
+.catch((err) => console.error(err));
 
 // Server
 const PORT = process.env.PORT || 3000;
