@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body >
+    <h1><%= settings.heroText %></h1>
+
+    <% if (isAdmin) { %>
+        <form method="POST" action="/admin/update">
+            <input type="text" name="heroText" value="<%= settings.heroText %>">
+            <input type="color" name="backgroundColor" value="<%= settings.backgroundColor %>">
+            <button type="submit">Save</button>
+        </form>
+    <% } %>
+</body>
+</html>
