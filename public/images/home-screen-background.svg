@@ -1,0 +1,100 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3730a3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4338ca;stop-opacity:0.8" />
+    </linearGradient>
+    <linearGradient id="gradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.8" />
+    </linearGradient>
+    <linearGradient id="gradient3" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#0f172a"/>
+  
+  <!-- Additional background circles -->
+  <circle cx="1000" cy="200" r="300" fill="none" stroke="#1e40af" stroke-width="1" opacity="0.1"/>
+  <circle cx="1100" cy="300" r="250" fill="none" stroke="#1d4ed8" stroke-width="1" opacity="0.1"/>
+  
+  <!-- Main flowing shapes -->
+  <path d="M800,100 
+           C1000,100 1100,300 1100,400 
+           S1000,700 800,700
+           S500,500 500,400 
+           S600,100 800,100Z" 
+        fill="none" 
+        stroke="url(#gradient1)" 
+        stroke-width="3"
+        opacity="0.7"/>
+  
+  <path d="M850,150
+           C1050,150 1050,350 1050,400
+           S1050,650 850,650
+           S650,450 650,400
+           S650,150 850,150Z"
+        fill="none"
+        stroke="url(#gradient2)"
+        stroke-width="3"
+        opacity="0.8"/>
+        
+  <path d="M900,200
+           C1050,200 1000,350 1000,400
+           S1050,600 900,600
+           S800,450 800,400
+           S750,200 900,200Z"
+        fill="none"
+        stroke="url(#gradient3)"
+        stroke-width="2.5"
+        opacity="0.6"/>
+        
+  <!-- Multiple circular elements with different colors -->
+  <circle cx="900" cy="400" r="200" fill="none" stroke="#60a5fa" stroke-width="1" opacity="0.2">
+    <animate attributeName="r" values="200;205;200" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="900" cy="400" r="180" fill="none" stroke="#818cf8" stroke-width="1" opacity="0.3">
+    <animate attributeName="r" values="180;185;180" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="900" cy="400" r="150" fill="none" stroke="#a78bfa" stroke-width="1" opacity="0.4">
+    <animate attributeName="r" values="150;155;150" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="900" cy="400" r="120" fill="none" stroke="#c084fc" stroke-width="1" opacity="0.5">
+    <animate attributeName="r" values="120;125;120" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Additional orbital circles -->
+  <circle cx="950" cy="350" r="80" fill="none" stroke="#93c5fd" stroke-width="1" opacity="0.4">
+    <animate attributeName="r" values="80;85;80" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="850" cy="450" r="100" fill="none" stroke="#a5b4fc" stroke-width="1" opacity="0.3">
+    <animate attributeName="r" values="100;105;100" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Decorative floating elements with more colors -->
+  <g opacity="0.8">
+    <circle cx="1050" cy="300" r="6">
+      <animate attributeName="cx" values="1050;1060;1050" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="300;310;300" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#818cf8;#6366f1;#818cf8" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="500" r="5">
+      <animate attributeName="cx" values="800;810;800" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="500;510;500" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#8b5cf6;#7c3aed;#8b5cf6" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="950" cy="450" r="5">
+      <animate attributeName="cx" values="950;960;950" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="450;460;450" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#3b82f6;#60a5fa;#3b82f6" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1000" cy="250" r="4">
+      <animate attributeName="cx" values="1000;1010;1000" dur="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="250;260;250" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#c084fc;#a78bfa;#c084fc" dur="4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

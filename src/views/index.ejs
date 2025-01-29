@@ -1,105 +1,166 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: white;
+            text-align: center;
+        }
+        header, footer {
+        }
+        nav ul {
+                list-style: none;
+                padding: 0;
+                display: flex;
+                flex-direction: row;
+                /* align-content: center; */
+                justify-content: center;
+                align-items: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .hero {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            height: 80vh;
+            background: url('/images/home-screen-background.svg') no-repeat center center/cover;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        section {
+            padding: 50px;
+        }
+
+        /* New Search Box Styles */
+        .search-box-container {
+            margin-top: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .search-box {
+            padding: 10px;
+            font-size: 1.2rem;
+            width: 300px;
+            border-radius: 30px;
+            border: 2px solid #007BFF;
+            background: transparent;
+            color: white;
+            outline: none;
+            padding-right: 40px; /* Make room for the icon */
+            transition: width 0.4s ease, padding 0.4s ease;
+        }
+
+        .search-box:focus {
+            width: 350px;
+            padding: 12px;
+        }
+
+        /* Search Icon */
+        .search-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Optional: Cool Animation */
+        .search-box-container {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
 </head>
-<body >
-
-<!-- Example of admin settings html   -->
-<h1><%= settings.heroText %></h1>
-
-<% if (isAdmin) { %>
-    <form method="POST" action="/admin/update">
-        <input type="text" name="heroText" value="<%= settings.heroText %>">
-        <input type="color" name="backgroundColor" value="<%= settings.backgroundColor %>">
-        <button type="submit">Save</button>
-    </form>
+<body>
+    <header role="banner" aria-label="Main Header">
+        <nav role="navigation" aria-label="Main Navigation">
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="/admin" class="btn">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
     
-<% } %>
-<!-- Example of admin settings html   -->
-
-<!-- Semantically Structured HTML -->
-<main>
-<header style="background-color: crimson; display: flex; justify-content: space-between;">
-    <h1 class="visually-hidden">Page Name</h1>
-    <nav aria-label="Main Navigation" style="width: 250px;">
-    <ul style="display: flex; justify-content: space-evenly;">
-        <li title="Go To Login"><a href="">Login</a></li>
-        <li title="Go To About"><a href="">About</a></li>
-        <li title="Go To Services"><a href="">Services</a></li>
-    </ul>
-    </nav> 
-</header>
-
-<section role="region" aria-labelledby="hero-section">
-    <h2>hero-section</h2>
-    <p>by category...</p>
-</section>
-
-<br>
-
-<section role="region" aria-labelledby="featured-services">
-    <h2 id="featured-services">Featured Services</h2>
-    <article title="Service 1">
-    <h3><a href="">Dev</a></h3>
-    <figure>
-        <img src="" alt="Stylish Shoes in Black">
-        <figcaption>Stylish Dev</figcaption>
-    </figure>
-    <p>$49.99</p>
-    <button>Learn More</button>
-    </article>
-    <article title="Service 2">
-    <h3><a href="">Dev</a></h3>
-    <figure>
-        <img src="" alt="Stylish Shoes in Black">
-        <figcaption>Stylish Dev</figcaption>
-    </figure>
-    <p>$49.99</p>
-    <button>Learn More</button>
-    </article>
-    <article title="Service 3">
-    <h3><a href="">Dev</a></h3>
-    <figure>
-        <img src="" alt="Stylish Shoes in Black">
-        <figcaption>Stylish Dev</figcaption>
-    </figure>
-    <p>$49.99</p>
-    <button>Learn More</button>
-    </article>
-    <article title="Service 4">
-    <h3><a href="">Dev</a></h3>
-    <figure>
-        <img src="" alt="Stylish Shoes in Black">
-        <figcaption>Stylish Dev</figcaption>
-    </figure>
-    <p>$49.99</p>
-    <button>Learn More</button>
-    </article>
-</section>
-
-<br>
-
-<section role="region" aria-labelledby="reviews">
-    <h2>Top Categories</h2>
-    <p>category...</p>
-</section>
-
-<br>
-
-<footer>
-    <nav aria-label="Footer Navigation">
-    <ul>
-        <li><a href="/about">About Us</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/terms">Terms of Service</a></li>
-    </ul>
-    </nav>
-    <p>&copy; 2025 Landing Page Name</p>
-</footer>
-</main>
-<!-- Semantically Structured HTML -->
-
+    <main>
+        <section class="hero" id="hero" aria-labelledby="hero-heading">
+            <div>
+                <h1 id="hero-heading">Welcome.</h1>
+                
+                <!-- Search Box Section -->
+                <div class="search-box-container">
+                    <input type="text" id="search" class="search-box" aria-label="Search">
+                    <!-- Search Icon from URL -->
+                    <img src="/images/search-icon.svg" class="search-icon" alt="Search Icon">
+                </div>
+            </div>
+        </section>
+        
+        <section id="features" aria-labelledby="features-heading">
+            <h2 id="features-heading">Our Features</h2>
+            <ul>
+                <li>High-Quality Services</li>
+                <li>24/7 Support</li>
+                <li>User-Friendly Experience</li>
+            </ul>
+        </section>
+        
+        <section id="testimonials" aria-labelledby="testimonials-heading">
+            <h2 id="testimonials-heading">What Our Customers Say</h2>
+            <blockquote>
+                <p>"This service changed my life! Highly recommend it."</p>
+                <cite>- Happy Customer</cite>
+            </blockquote>
+        </section>
+        
+        <section id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Get in Touch</h2>
+            <form action="/submit" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer role="contentinfo" aria-label="Footer">
+        <p>&copy; 2025 Your Company. All rights reserved.</p>
+    </footer>
 </body>
 </html>
