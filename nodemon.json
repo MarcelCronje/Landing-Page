@@ -1,0 +1,9 @@
+{
+    "watch": [
+      "src/scss",
+      "src/js",
+      "app.js"
+    ],
+    "ext": "js,scss",
+    "exec": "npm run sass && node app.js"
+  }

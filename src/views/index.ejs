@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body >
+
+<!-- Example of admin settings html   -->
+<h1><%= settings.heroText %></h1>
+
+<% if (isAdmin) { %>
+    <form method="POST" action="/admin/update">
+        <input type="text" name="heroText" value="<%= settings.heroText %>">
+        <input type="color" name="backgroundColor" value="<%= settings.backgroundColor %>">
+        <button type="submit">Save</button>
+    </form>
+    
+<% } %>
+<!-- Example of admin settings html   -->
+
+<!-- Semantically Structured HTML -->
+<main>
+<header style="background-color: crimson; display: flex; justify-content: space-between;">
+    <h1 class="visually-hidden">Page Name</h1>
+    <nav aria-label="Main Navigation" style="width: 250px;">
+    <ul style="display: flex; justify-content: space-evenly;">
+        <li title="Go To Login"><a href="">Login</a></li>
+        <li title="Go To About"><a href="">About</a></li>
+        <li title="Go To Services"><a href="">Services</a></li>
+    </ul>
+    </nav> 
+</header>
+
+<section role="region" aria-labelledby="hero-section">
+    <h2>hero-section</h2>
+    <p>by category...</p>
+</section>
+
+<br>
+
+<section role="region" aria-labelledby="featured-services">
+    <h2 id="featured-services">Featured Services</h2>
+    <article title="Service 1">
+    <h3><a href="">Dev</a></h3>
+    <figure>
+        <img src="" alt="Stylish Shoes in Black">
+        <figcaption>Stylish Dev</figcaption>
+    </figure>
+    <p>$49.99</p>
+    <button>Learn More</button>
+    </article>
+    <article title="Service 2">
+    <h3><a href="">Dev</a></h3>
+    <figure>
+        <img src="" alt="Stylish Shoes in Black">
+        <figcaption>Stylish Dev</figcaption>
+    </figure>
+    <p>$49.99</p>
+    <button>Learn More</button>
+    </article>
+    <article title="Service 3">
+    <h3><a href="">Dev</a></h3>
+    <figure>
+        <img src="" alt="Stylish Shoes in Black">
+        <figcaption>Stylish Dev</figcaption>
+    </figure>
+    <p>$49.99</p>
+    <button>Learn More</button>
+    </article>
+    <article title="Service 4">
+    <h3><a href="">Dev</a></h3>
+    <figure>
+        <img src="" alt="Stylish Shoes in Black">
+        <figcaption>Stylish Dev</figcaption>
+    </figure>
+    <p>$49.99</p>
+    <button>Learn More</button>
+    </article>
+</section>
+
+<br>
+
+<section role="region" aria-labelledby="reviews">
+    <h2>Top Categories</h2>
+    <p>category...</p>
+</section>
+
+<br>
+
+<footer>
+    <nav aria-label="Footer Navigation">
+    <ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+    </ul>
+    </nav>
+    <p>&copy; 2025 Landing Page Name</p>
+</footer>
+</main>
+<!-- Semantically Structured HTML -->
+
+</body>
+</html>
